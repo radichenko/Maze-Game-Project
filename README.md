@@ -1,7 +1,7 @@
 # Maze-Game-Project
 
 # Description:
-Maze Game is a web-based game where yo navigate through a maze to reach the goal. The objective is to control a character within the maze and find the path to the exit. 
+Maze Game is a web-based game where you navigate through a maze to reach the goal. The objective is to control a character within the maze and find the path to the exit. 
 
 # Features:
 Maze Generation: The genMaze() function uses a depth-first search algorithm to generate a random maze by exploring and connecting maze cells.
