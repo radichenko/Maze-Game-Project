@@ -87,3 +87,39 @@ function limitedShuffle(array, limit) {
 	let combined = constrained.concat(remaining);
 	return combined;
 }
+
+function drawMaze() {
+	for (let x = 0; x < mx; x++) {
+		for (let y = 0; y < my; y++) {
+			let l = grid[y][x].l;
+			let r = grid[y][x].r;
+			let u = grid[y][x].u;
+			let d = grid[y][x].d;
+            drawLines(x, y, l, r, u, d);
+		}
+	}
+}
+
+function drawLines(x, y, l, r, u, d) {
+	const top = (y + 1) * step;
+	const left = (x + 1) * step;
+	if (l === 0 && x > 0) {
+		let lineElement = document.createElement("div");
+		lineElement.style.left = left + "px";
+		lineElement.style.height = step + "px";
+		lineElement.style.top = top + "px";
+		lineElement.setAttribute("class", "barrier");
+		lineElement.style.width = borderWidth + "px";
+		maze.appendChild(lineElement);
+	}
+
+	if (d === 0 && y < my - 1) {
+		let lineElement = document.createElement("div");
+		lineElement.style.left = left + "px";
+		lineElement.style.height = borderWidth + "px";
+		lineElement.style.top = top + step + "px";
+		lineElement.setAttribute("class", "barrier");
+		lineElement.style.width = step + borderWidth + "px";
+		maze.appendChild(lineElement);
+	}
+}
