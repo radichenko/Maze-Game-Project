@@ -43,6 +43,14 @@ generateSides();
 generateMaze(0, 0, 0);
 drawMaze();
 
+const barriers = document.getElementsByClassName("barrier");
+for (let b = 0; b < barriers.length; b++) {
+	noGoX.push(barriers[b].offsetLeft);
+	noGoX2.push(barriers[b].offsetLeft + barriers[b].clientWidth);
+	noGoY.push(barriers[b].offsetTop);
+	noGoY2.push(barriers[b].offsetTop + barriers[b].clientHeight);
+}
+
 function generateSides() {
 	const maxSides = mazeHeight / step;
 	const section1Height = Math.floor(Math.random() * maxSides) * step;
