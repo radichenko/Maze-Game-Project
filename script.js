@@ -25,3 +25,11 @@ for (let i = 0; i < my; i++) {
 	}
 	grid.push(rowArray);
 }
+
+const directions = ["u", "d", "l", "r"];
+const directionModifier = {
+	u: { y: -1, x: 0, o: "d" },
+	d: { y: 1, x: 0, o: "u" },
+	l: { y: 0, x: -1, o: "r" },
+	r: { y: 0, x: 1, o: "l" }
+};
