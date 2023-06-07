@@ -59,6 +59,30 @@ function up() {
 	}
 }
 
+function down() {
+	animKeys(bDown);
+	if (checkYboundry("d")) {
+		player.style.top = player.offsetTop + step + "px";
+		updateEmo(false);
+	}
+}
+
+function left() {
+	animKeys(bLeft);
+	if (checkXboundry("l")) {
+		player.style.left = player.offsetLeft - step + "px";
+	}
+	updateEmo(true);
+}
+
+function right() {
+	animKeys(bRight);
+	if (checkXboundry("r")) {
+		player.style.left = player.offsetLeft + step + "px";
+	}
+	updateEmo(true);
+}
+
 function checkXboundry(direction) {
 	const x = player.offsetLeft;
 	const y = player.offsetTop;
