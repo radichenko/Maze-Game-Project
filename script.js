@@ -52,6 +52,40 @@ for (let b = 0; b < barriers.length; b++) {
 	noGoY2.push(barriers[b].offsetTop + barriers[b].clientHeight);
 }
 
+document.addEventListener("keydown", handleKeyPress);
+
+function handleKeyPress(e) {
+	const code = e.code;
+	switch (code) {
+		//arrows
+		case "ArrowUp":
+			up();
+			break;
+		case "ArrowDown":
+			down();
+			break;
+		case "ArrowLeft":
+			left();
+			break;
+		case "ArrowRight":
+			right();
+			break;
+		//wasd
+		case "KeyW":
+			up();
+			break;
+		case "KeyS":
+			down();
+			break;
+		case "KeyA":
+			left();
+			break;
+		case "KeyD":
+			right();
+			break;
+	}
+}
+
 function up() {
 	animKeys(bUp);
 	if (checkYboundry("u")) {
