@@ -121,21 +121,9 @@ function generateMaze(currentX, currentY, s) {
 		if (nextX >= 0 && nextX < mx && nextY >= 0 && nextY < my && grid[nextY][nextX].v === 0) {
 			grid[currentY][currentX][shuffledDirections[i]] = 1;
 			grid[nextY][nextX][directionModifier[shuffledDirections[i]].o] = 1;
-			genMaze(nextX, nextY, i);
+			generateMaze(nextX, nextY, i);
 		}
 	}
-}
-
-function limitedShuffle(array, limit) {
-	let constrained = array.slice(0, limit);
-	let remaining = array.slice(limit, array.length);
-
-	for (let i = remaining.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		[remaining[i], remaining[j]] = [remaining[j], remaining[i]];
-	}
-	let combined = constrained.concat(remaining);
-	return combined;
 }
 
 function drawMaze() {
@@ -172,4 +160,16 @@ function drawLines(x, y, l, r, u, d) {
 		lineElement.style.width = step + borderWidth + "px";
 		maze.appendChild(lineElement);
 	}
+}
+
+function limitedShuffle(array, limit) {
+	let constrained = array.slice(0, limit);
+	let remaining = array.slice(limit, array.length);
+
+	for (let i = remaining.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[remaining[i], remaining[j]] = [remaining[j], remaining[i]];
+	}
+	let combined = constrained.concat(remaining);
+	return combined;
 }
