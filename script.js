@@ -52,6 +52,13 @@ for (let b = 0; b < barriers.length; b++) {
 	noGoY2.push(barriers[b].offsetTop + barriers[b].clientHeight);
 }
 
+function up() {
+	animKeys(bUp);
+	if (checkYboundry("u")) {
+		player.style.top = player.offsetTop - step + "px";
+	}
+}
+
 function checkXboundry(direction) {
 	const x = player.offsetLeft;
 	const y = player.offsetTop;
