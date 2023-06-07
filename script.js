@@ -59,3 +59,19 @@ function generateSides() {
 	rightBar2.style.left = mazeWidth + step + "px";
 	rightBar2.style.height = section1Height + "px";
 }
+
+function generateMaze(currentX, currentY, s) {
+	const shuffledDirections = limShuffle(directions, s);
+
+	for (let i = 0; i < shuffledDirections.length; i++) {
+		let nextX = currentX + directionModifier[shuffledDirections[i]].x;
+		let nextY = currentY + directionModifier[shuffledDirections[i]].y;
+		grid[currentY][currentX].v = 1;
+
+		if (nextX >= 0 && nextX < mx && nextY >= 0 && nextY < my && grid[nextY][nextX].v === 0) {
+			grid[currentY][currentX][shuffledDirections[i]] = 1;
+			grid[nextY][nextX][directionModifier[shuffledDirections[i]].o] = 1;
+			genMaze(nextX, nextY, i);
+		}
+	}
+}
