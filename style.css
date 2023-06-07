@@ -5,13 +5,13 @@
 	right: 0;
 	bottom: 0;
 	display: grid;
-	
+	grid-template-rows: 60% 40%;
 }
 
 .main-box,
 .controls-box {
 	height: 100%;
-	background: #191970;
+	background: #000000;
 	display: grid;
 }
 
@@ -22,14 +22,14 @@
 	top: 30vh;
 	left: 50%;
 	transform: translate(-50%, -50%);
-    background: #FFFFFF;
+    background: #000000;
 
 }
 
 .buttons {
 	width: 300px;
 	height: 200px;
-	background: #191970;
+	background: #000000;
 	align-self: center;
 	justify-self: center;
 	display: grid;
@@ -38,19 +38,19 @@
 }
 .barrier {
 	position: absolute;
-	background: #de0d0d;
+	background: #DAA520;
 }
 
 #top-barrier {
 	top: 25px;
 	left: 25px;
 	width: 375px;
-	height: 2px;
+	height: 4px;
 }
 
 #bottom-barrier {
 	top: 275px;
 	left: 25px;
 	width: 375px;
-	height: 2px;
+	height: 4px;
 }
