@@ -86,6 +86,23 @@ function handleKeyPress(e) {
 	}
 }
 
+bUp.addEventListener("click", (e) => {
+	up();
+	firstMove = true;
+});
+bDown.addEventListener("click", (e) => {
+	down();
+	firstMove = true;
+});
+bLeft.addEventListener("click", (e) => {
+	left();
+	firstMove = true;
+});
+bRight.addEventListener("click", (e) => {
+	right();
+	firstMove = true;
+});
+
 function up() {
 	animKeys(bUp);
 	if (checkYboundry("u")) {
