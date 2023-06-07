@@ -40,3 +40,17 @@
 	position: absolute;
 	background: #de0d0d;
 }
+
+#top-barrier {
+	top: 25px;
+	left: 25px;
+	width: 375px;
+	height: 2px;
+}
+
+#bottom-barrier {
+	top: 275px;
+	left: 25px;
+	width: 375px;
+	height: 2px;
+}
