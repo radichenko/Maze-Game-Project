@@ -53,7 +53,10 @@ for (let b = 0; b < barriers.length; b++) {
 }
 
 document.addEventListener("keydown", handleKeyPress);
-
+document.getElementById("refreshButton").addEventListener("click", function() {
+    location.reload();
+  });
+  
 function handleKeyPress(e) {
 	const code = e.code;
 	switch (code) {

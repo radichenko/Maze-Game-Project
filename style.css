@@ -133,3 +133,15 @@ button {
 button:active {
 	transform: scale(1);
 }
+
+#refreshButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
