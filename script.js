@@ -63,7 +63,6 @@ function down() {
 	animKeys(bDown);
 	if (checkYboundry("d")) {
 		player.style.top = player.offsetTop + step + "px";
-		updateEmo(false);
 	}
 }
 
@@ -72,7 +71,6 @@ function left() {
 	if (checkXboundry("l")) {
 		player.style.left = player.offsetLeft - step + "px";
 	}
-	updateEmo(true);
 }
 
 function right() {
@@ -80,7 +78,6 @@ function right() {
 	if (checkXboundry("r")) {
 		player.style.left = player.offsetLeft + step + "px";
 	}
-	updateEmo(true);
 }
 
 function checkXboundry(direction) {
