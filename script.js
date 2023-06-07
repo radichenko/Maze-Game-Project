@@ -34,6 +34,8 @@ const directionModifier = {
 	r: { y: 0, x: 1, o: "l" }
 };
 
+
+
 function generateSides() {
 	const maxSides = mazeHeight / step;
 	const section1Height = Math.floor(Math.random() * maxSides) * step;
@@ -58,6 +60,49 @@ function generateSides() {
 	rightBar2.style.top = section2Height + step * 2 + "px";
 	rightBar2.style.left = mazeWidth + step + "px";
 	rightBar2.style.height = section1Height + "px";
+
+	noGoX.push(0, mazeWidth + 2 * step, 0, 0, mazeWidth + step, mazeWidth + step);
+	noGoX2.push(
+		0 + borderWidth,
+		mazeWidth + 2 * step + borderWidth,
+		step,
+		step,
+		mazeWidth + 2 * step,
+		mazeWidth + 2 * step
+	);
+	noGoY.push(
+		section1Height + step,
+		section2Height + step,
+		section1Height + step,
+		section1Height + 2 * step,
+		section2Height + step,
+		section2Height + 2 * step
+	);
+	noGoY2.push(
+		section1Height + 2 * step,
+		section2Height + 2 * step,
+		section1Height + step + borderWidth,
+		section1Height + 2 * step + borderWidth,
+		section2Height + step + borderWidth,
+		section2Height + 2 * step + borderWidth
+	);
+	
+	player.style.top = section1Height + step + "px";
+	player.style.left = 0 + "px";
+	
+	home.style.top = section2Height + step + "px";
+	home.style.left = mazeWidth + step + "px";
+
+	let sideSections = [leftBar1, leftBar2, rightBar1, rightBar2];
+	for (let i = 0; i < sideSections.length; i++) {
+		configureSideElement(sideSections[i]);
+		maze.appendChild(sideSections[i]);
+	}
+}
+
+function configureSideElement(el) {
+	el.setAttribute("class", "barrier");
+	el.style.width = borderWidth + "px";
 }
 
 function generateMaze(currentX, currentY, s) {
