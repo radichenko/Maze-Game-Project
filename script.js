@@ -10,9 +10,10 @@ const bLeft = document.getElementById("button-left");
 const bRight = document.getElementById("button-right");
 
 const step = 25;
+const size = 25;
 const borderWidth = 2;
-const mazeHeight = 200;
-const mazeWidth = 300;
+const mazeHeight = 250;
+const mazeWidth = 375;
 const noGoX = [];
 const noGoX2 = [];
 const noGoY = [];
@@ -49,6 +50,36 @@ for (let b = 0; b < barriers.length; b++) {
 	noGoX2.push(barriers[b].offsetLeft + barriers[b].clientWidth);
 	noGoY.push(barriers[b].offsetTop);
 	noGoY2.push(barriers[b].offsetTop + barriers[b].clientHeight);
+}
+
+
+function checkXboundry(direction) {
+	const x = player.offsetLeft;
+	const y = player.offsetTop;
+	const results = [];
+	const length = Math.max(noGoX.length, noGoX2.length, noGoY.length, noGoY2.length);
+	let check = 0;
+	for (let i = 0; i < length; i++) {
+		check = 0;
+		if (y < noGoY[i] || y > noGoY2[i] - size) {
+			check = 1;
+		}
+		if (direction === "r") {
+			if (x < noGoX[i] - size || x > noGoX2[i] - size) {
+				check = 1;
+			}
+		}
+		if (direction === "l") {
+			if (x < noGoX[i] || x > noGoX2[i]) {
+				check = 1;
+			}
+		}
+		results.push(check);
+	}
+	const res = results.every(function (e) {
+		return e > 0;
+	});
+	return res;
 }
 
 function generateSides() {
