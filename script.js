@@ -39,22 +39,22 @@ function generateSides() {
 	const section1Height = Math.floor(Math.random() * maxSides) * step;
 	const section2Height = mazeHeight - step - section1Height;
 
-	let leftBar1 = document.createElement("div");
+	const leftBar1 = document.createElement("div");
 	leftBar1.style.top = step + "px";
 	leftBar1.style.left = step + "px";
 	leftBar1.style.height = section1Height + "px";
 
-	let leftBar2 = document.createElement("div");
+	const leftBar2 = document.createElement("div");
 	leftBar2.style.top = section1Height + step * 2 + "px";
 	leftBar2.style.left = step + "px";
 	leftBar2.style.height = section2Height + "px";
 
-	let rightBar1 = document.createElement("div");
+	const rightBar1 = document.createElement("div");
 	rightBar1.style.top = step + "px";
 	rightBar1.style.left = mazeWidth + step + "px";
 	rightBar1.style.height = section2Height + "px";
 
-	let rightBar2 = document.createElement("div");
+	const rightBar2 = document.createElement("div");
 	rightBar2.style.top = section2Height + step * 2 + "px";
 	rightBar2.style.left = mazeWidth + step + "px";
 	rightBar2.style.height = section1Height + "px";
