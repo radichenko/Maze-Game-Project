@@ -21,7 +21,7 @@ const grid = [];
 for (let i = 0; i < my; i++) {
 	const rowArray = [];
 	for (let a = 0; a < mx; a++) {
-		sg.push({ u: 0, d: 0, l: 0, r: 0, v: 0 });
+		rowArray.push({ u: 0, d: 0, l: 0, r: 0, v: 0 });
 	}
 	grid.push(rowArray);
 }
