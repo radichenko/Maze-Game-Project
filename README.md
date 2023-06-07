@@ -23,7 +23,7 @@ Reach the goal as quickly as possible to achieve a high score.
 Enjoy the challenge and have fun!
 
 Screenshot:
-![Maze Game](https://github.com/radichenko/Maze-Game-Project/blob/main/screenshot.jpg
+![Maze Game](https://github.com/radichenko/Maze-Game-Project/blob/main/screenshot.jpg)
 
 # Installation:
 
