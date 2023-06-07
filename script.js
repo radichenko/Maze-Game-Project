@@ -11,7 +11,7 @@ const bRight = document.getElementById("button-right");
 
 const step = 25;
 const size = 25;
-const borderWidth = 2;
+const borderWidth = 4;
 const mazeHeight = 250;
 const mazeWidth = 375;
 const noGoX = [];
@@ -324,37 +324,38 @@ function limitedShuffle(array, limit) {
 
 function animKeys(key) {
 	if (key.id === "bUp") {
-		key.style.border = "3px #fff solid";
-		key.style.borderTop = "1px #fff solid";
-		key.style.borderBottom = "4px #fff solid";
+		key.style.border = "3px #DAA520 solid";
+		key.style.borderTop = "1px #DAA520 solid";
+		key.style.borderBottom = "4px #DAA520 solid";
 		key.style.transform = "translateY(-2px)";
 	}
 	if (key.id === "bDown") {
-		key.style.border = "3px #fff solid";
-		key.style.borderBottom = "1px #fff solid";
-		key.style.borderTop = "4px #fff solid";
+		key.style.border = "3px #DAA520 solid";
+		key.style.borderBottom = "1px #DAA520 solid";
+		key.style.borderTop = "4px #DAA520 solid";
 		key.style.transform = "translateY(2px)";
 	}
 	if (key.id === "bLeft") {
-		key.style.border = "3px #fff solid";
-		key.style.borderLeft = "1px #fff solid";
-		key.style.borderRight = "4px #fff solid";
+		key.style.border = "3px #DAA520 solid";
+		key.style.borderLeft = "1px #DAA520 solid";
+		key.style.borderRight = "4px #DAA520 solid";
 		key.style.transform = "translateX(-2px)";
 	}
 	if (key.id === "bRight") {
-		key.style.border = "3px #fff solid";
-		key.style.borderRight = "1px #fff solid";
-		key.style.borderLeft = "4px #fff solid";
+		key.style.border = "3px #DAA520 solid";
+		key.style.borderRight = "1px #DAA520 solid";
+		key.style.borderLeft = "4px #DAA520 solid";
 		key.style.transform = "translateX(2px)";
 	}
 
 	setTimeout(() => {
-		key.style.border = "2px #fff solid";
-		key.style.borderTop = "2px #fff solid";
-		key.style.borderBottom = "2px #fff solid";
-		key.style.borderLeft = "2px #fff solid";
-		key.style.borderRight = "2px #fff solid";
+		key.style.border = "4px #DAA520 solid";
+		key.style.borderTop = "4px #DAA520 solid";
+		key.style.borderBottom = "4px #DAA520 solid";
+		key.style.borderLeft = "4px #DAA520 solid";
+		key.style.borderRight = "4px #DAA520 solid";
 		key.style.transform = "translateY(0px)";
 		key.style.transform = "translateX(0px)";
 	}, "150");
 }
+

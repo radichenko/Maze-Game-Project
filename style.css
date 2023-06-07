@@ -78,23 +78,7 @@
 	grid-row-start: 2;
 }
 
-button {
-	display: inline-block;
-	border: none;
-	padding: none;
-	margin: 0;
-	outline: none;
-	background: none;
-	-webkit-tap-highlight-color: transparent;
-}
 
-button:focus {
-	outline: none;
-}
-
-button:active {
-	transform: scale(1);
-}
 
 .barrier {
 	position: absolute;
@@ -134,4 +118,18 @@ button:active {
 	font-size: 15px;
 	line-height: 15px;
 	text-align: left;
+}
+
+button {
+	display: inline-block;
+	border: none;
+	padding: none;
+	margin: 0;
+	outline: none;
+	background: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+	transform: scale(1);
 }
