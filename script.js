@@ -39,7 +39,9 @@ const directionModifier = {
 	r: { y: 0, x: 1, o: "l" }
 };
 
-
+generateSides();
+generateMaze(0, 0, 0);
+drawMaze();
 
 function generateSides() {
 	const maxSides = mazeHeight / step;
@@ -91,10 +93,8 @@ function generateSides() {
 		section2Height + step + borderWidth,
 		section2Height + 2 * step + borderWidth
 	);
-	
 	player.style.top = section1Height + step + "px";
 	player.style.left = 0 + "px";
-	
 	home.style.top = section2Height + step + "px";
 	home.style.left = mazeWidth + step + "px";
 
@@ -121,7 +121,7 @@ function generateMaze(currentX, currentY, s) {
 		if (nextX >= 0 && nextX < mx && nextY >= 0 && nextY < my && grid[nextY][nextX].v === 0) {
 			grid[currentY][currentX][shuffledDirections[i]] = 1;
 			grid[nextY][nextX][directionModifier[shuffledDirections[i]].o] = 1;
-			generateMaze(nextX, nextY, i);
+			genMaze(nextX, nextY, i);
 		}
 	}
 }
