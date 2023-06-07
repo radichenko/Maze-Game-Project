@@ -21,8 +21,9 @@ Shuffle Function: The limShuffle() function shuffles an array up to a specified 
 Use the arrow keys or tilt your device to navigate the character through the maze.
 Reach the goal as quickly as possible to achieve a high score.
 Enjoy the challenge and have fun!
-Screenshot:
 
+Screenshot:
+![Maze Game](https://github.com/radichenko/Maze-Game-Project/blob/main/screenshot.jpg
 
 # Installation:
 
