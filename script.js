@@ -52,7 +52,6 @@ for (let b = 0; b < barriers.length; b++) {
 	noGoY2.push(barriers[b].offsetTop + barriers[b].clientHeight);
 }
 
-
 function checkXboundry(direction) {
 	const x = player.offsetLeft;
 	const y = player.offsetTop;
@@ -71,6 +70,35 @@ function checkXboundry(direction) {
 		}
 		if (direction === "l") {
 			if (x < noGoX[i] || x > noGoX2[i]) {
+				check = 1;
+			}
+		}
+		results.push(check);
+	}
+	const res = results.every(function (e) {
+		return e > 0;
+	});
+	return res;
+}
+
+function checkYboundry(direction) {
+	const x = player.offsetLeft;
+	const y = player.offsetTop;
+	const results = [];
+	const length = Math.max(noGoX.length, noGoX2.length, noGoY.length, noGoY2.length);
+	let check = 0;
+	for (let i = 0; i < length; i++) {
+		check = 0;
+		if (x < noGoX[i] || x > noGoX2[i] - size) {
+			check = 1;
+		}
+		if (direction === "u") {
+			if (y < noGoY[i] || y > noGoY2[i]) {
+				check = 1;
+			}
+		}
+		if (direction === "d") {
+			if (y < noGoY[i] - size || y > noGoY2[i] - size) {
 				check = 1;
 			}
 		}
