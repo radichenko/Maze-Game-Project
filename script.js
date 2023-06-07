@@ -13,6 +13,11 @@ const step = 25;
 const borderWidth = 2;
 const mazeHeight = 200;
 const mazeWidth = 300;
+const noGoX = [];
+const noGoX2 = [];
+const noGoY = [];
+const noGoY2 = [];
+const prevDist = mazeWidth * 2;
 
 const my = mazeHeight / step;
 const mx = mazeWidth / step;
