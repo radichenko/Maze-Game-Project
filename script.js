@@ -61,7 +61,7 @@ function generateSides() {
 }
 
 function generateMaze(currentX, currentY, s) {
-	const shuffledDirections = limShuffle(directions, s);
+	const shuffledDirections = limitedShuffle(directions, s);
 
 	for (let i = 0; i < shuffledDirections.length; i++) {
 		let nextX = currentX + directionModifier[shuffledDirections[i]].x;
@@ -74,4 +74,16 @@ function generateMaze(currentX, currentY, s) {
 			genMaze(nextX, nextY, i);
 		}
 	}
+}
+
+function limitedShuffle(array, limit) {
+	let constrained = array.slice(0, limit);
+	let remaining = array.slice(limit, array.length);
+
+	for (let i = remaining.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[remaining[i], remaining[j]] = [remaining[j], remaining[i]];
+	}
+	let combined = constrained.concat(remaining);
+	return combined;
 }
